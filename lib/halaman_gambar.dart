@@ -1,3 +1,4 @@
+import 'package:belajar/halaman_awal.dart';
 import 'package:flutter/material.dart';
 
 class HalamanGambar extends StatelessWidget {
@@ -100,7 +101,15 @@ class HalamanGambar extends StatelessWidget {
               SizedBox(height: 30),
 
               Icon(Icons.search),
-              Icon(Icons.email),
+              GestureDetector(
+                  onTap: (){
+                    print("di klik");
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => HalamanAwal()
+                    ));
+                  },
+                  child: Icon(Icons.water_damage, size: 50)
+              ),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
