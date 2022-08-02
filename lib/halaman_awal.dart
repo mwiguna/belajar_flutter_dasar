@@ -1,6 +1,7 @@
+import 'package:belajar/halaman_gambar.dart';
 import 'package:belajar/halaman_layout.dart';
 import 'package:belajar/halaman_profil.dart';
-import 'package:belajar/helper.dart';
+import 'package:belajar/widgets/items.dart';
 import 'package:flutter/material.dart';
 
 class HalamanAwal extends StatelessWidget {
@@ -8,43 +9,61 @@ class HalamanAwal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String judul_aplikasi = "Aplikasi Pembelajaran \n Dasar Flutter";
+
     return Scaffold(
-            body: SafeArea(
+        backgroundColor: Color(0xFFd0f4f7),
+        appBar: AppBar(title: Text("Aplikasi Dasar Flutter"), backgroundColor: Colors.teal),
+        body: SafeArea(
 
-              child: Column(
-                  children: [
-                    Text("Halaman Awal"),
+          child: Column(
+              children: [
+                SizedBox(height: 20),
 
-                    Divider(),
-                    Text("Selamat Datang", style: TextStyle(color: Colors.red)),
-                    Text("Aplikasi Pertama", style: TextStyle(color: Colors.red,
-                        backgroundColor: Colors.yellow)),
-
-                    ElevatedButton(
-                      child: Text("Buka Halaman Layout"),
-                      onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(
-                            builder: (context) => HalamanLayout()
-                        ));
-                      },
+                Container(
+                    width: 375,
+                    padding: EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15)
                     ),
+                    child: Text(judul_aplikasi, textAlign: TextAlign.center, style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Nunito"
+                    ))
+                ),
 
+                Divider(),
 
+                SizedBox(height: 25),
 
-                    // Container(
-                    //     width: 100,
-                    //     height: 100,
-                    //     clipBehavior: Clip.antiAlias,
-                    //     decoration: BoxDecoration(
-                    //         borderRadius: BorderRadius.circular(50)
-                    //     ),
-                    //     child: Image.asset("assets/bigtree.png", fit: BoxFit.cover)
-                    // ),
+                Container(
+                  width: 375,
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15)
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      judulMenu("Daftar Materi"),
 
-                  ]
-              ),
+                      itemMateri(context, "Halaman Layout", HalamanLayout()),
+                      Divider(),
+                      itemMateri(context, "Halaman Profil", HalamanProfil()),
+                      Divider(),
+                      itemMateri(context, "Halaman Gambar", HalamanGambar()),
 
-            )
+                    ],
+                  ),
+                ),
+
+              ]
+          ),
+
+        )
     );
   }
 }

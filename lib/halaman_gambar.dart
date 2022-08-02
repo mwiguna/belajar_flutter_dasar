@@ -22,6 +22,7 @@ class HalamanGambar extends StatelessWidget {
                   fontSize: 25
                 ),),
               ),
+
               Image.asset("assets/chair.jpg"),
               Image.asset("assets/meeting.jpg"),
 
