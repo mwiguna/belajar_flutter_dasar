@@ -8,6 +8,17 @@ class HalamanTextField extends StatefulWidget {
 }
 
 class _HalamanTextFieldState extends State<HalamanTextField> {
+  String username = "username";
+  String no_hp = "no_hp";
+  String password = "password";
+  String email = "email";
+  String textbutton = "Klik";
+
+  TextEditingController controller_username = TextEditingController();
+  TextEditingController controller_nohp = TextEditingController();
+  TextEditingController controller_password = TextEditingController();
+  TextEditingController controller_email = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +31,7 @@ class _HalamanTextFieldState extends State<HalamanTextField> {
               Text("Halaman TextField"),
 
               TextField(
+                controller: controller_username,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(), // ngotak
                     labelText: "Username", //label + js
@@ -30,6 +42,7 @@ class _HalamanTextFieldState extends State<HalamanTextField> {
               SizedBox(height: 15),
 
               TextField(
+                controller: controller_nohp,
                 keyboardType: TextInputType.number, // numeric only
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -40,6 +53,7 @@ class _HalamanTextFieldState extends State<HalamanTextField> {
               SizedBox(height: 15),
 
               TextField(
+                controller: controller_password,
                 obscureText: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -50,15 +64,41 @@ class _HalamanTextFieldState extends State<HalamanTextField> {
               SizedBox(height: 15),
 
               TextField(
+                controller: controller_email,
                 decoration: InputDecoration(
                   filled: true, // diwarnai / tidak
-                  fillColor: Colors.pink.withOpacity(0.25),
+                  fillColor: Colors.pink.withOpacity(0.2),
+                  contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 40),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30)
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide(width: 0, style: BorderStyle.none)
                   ),
-                  labelText: "E-mail",
+                  hintText: "E-mail",
                 ),
               ),
+
+              ElevatedButton(
+                  onPressed: (){
+                    setState(() {
+                      username = controller_username.text;
+                      no_hp = controller_nohp.text;
+                      password = controller_password.text;
+                      email = controller_email.text;
+
+                      if(username == ""){
+                        textbutton = "Maaf, lengkapi username";
+                      } else {
+                        textbutton = "Berhasil";
+                      }
+                    });
+                  },
+                  child: Text(textbutton)
+              ),
+
+              Text(username),
+              Text(no_hp),
+              Text(password),
+              Text(email),
 
             ],
           ),
