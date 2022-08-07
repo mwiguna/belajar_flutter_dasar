@@ -85,11 +85,14 @@ class _HalamanTextFieldState extends State<HalamanTextField> {
                       password = controller_password.text;
                       email = controller_email.text;
 
-                      if(username == ""){
-                        textbutton = "Maaf, lengkapi username";
+                      if(username == "" || no_hp == "" || password == "" || email == ""){
+                        textbutton = "Maaf, lengkapi data";
                       } else {
                         textbutton = "Berhasil";
                       }
+
+                      // or = salah satu benar, true
+                      // and = salah satu salah, false
                     });
                   },
                   child: Text(textbutton)
