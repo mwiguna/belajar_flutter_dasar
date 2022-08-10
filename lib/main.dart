@@ -1,4 +1,5 @@
 import 'package:belajar/halaman_awal.dart';
+import 'package:belajar/halaman_dialog.dart';
 import 'package:belajar/halaman_gambar.dart';
 import 'package:belajar/halaman_layout.dart';
 import 'package:belajar/halaman_profil.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MateriDialog()
+      home: HalamanLayout()
     );
   }
 }
