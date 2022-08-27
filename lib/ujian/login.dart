@@ -1,6 +1,6 @@
-import 'package:belajar/Ujian/aplikasi_belajar.dart';
 import 'package:belajar/halaman_awal.dart';
 import 'package:belajar/halaman_layout.dart';
+import 'package:belajar/ujian/aplikasi_belajar.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -13,6 +13,8 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   String username = "username";
   String password = "password";
+
+  String welcomeAsal  = "Selamat Datang";
 
   TextEditingController controller_username = TextEditingController();
   TextEditingController controller_password = TextEditingController();
@@ -33,7 +35,7 @@ class _LoginState extends State<Login> {
                   padding: const EdgeInsets.only(left: 60, right: 19),
                   child: Icon(Icons.account_circle_outlined, size: 41,),
                 ),
-                Text("Selamat Datang", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                Text(welcomeAsal, style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
               ],
             ),
             Padding(
@@ -73,7 +75,10 @@ class _LoginState extends State<Login> {
 
                   if (username == "richel" && password == "tidakbenar" ) {
                     Navigator.push(context, MaterialPageRoute(
-                        builder: (context) => AplikasiBelajar()
+                        builder: (context) => AplikasiBelajar(
+                            welcomeTampungan: welcomeAsal,
+                            judulHalaman: "Home Aplikasi Belajar",
+                        )
                     ));
                   }
                   else if(username == "" || password == ""){

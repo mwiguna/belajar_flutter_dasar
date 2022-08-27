@@ -1,4 +1,5 @@
 
+import 'package:belajar/data_statis.dart';
 import 'package:belajar/ujian/edit_profil.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,6 @@ class _ProfilState extends State<Profil> {
   String nama = "Richel Graciela Zhang";
   String tempat_lahir = "Jambi";
   String tanggal_lahir = "08 Juli 2010";
-  int umur = 12;
   String sekolah = "SMP Sariputra";
   String kelas = "7A";
   String hobi = "Makan dan Tidur";
@@ -65,53 +65,39 @@ class _ProfilState extends State<Profil> {
                       padding: const EdgeInsets.only(top: 21),
                       child: Text("Profil", style: TextStyle(fontWeight: FontWeight.bold,color : Colors.blue),),
                     ),
-                    Divider(color: Colors.blue, thickness: 2,),
+                    pembatas_biru,
 
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text("Nama Lengkap", style: TextStyle( fontWeight: FontWeight.bold, fontSize: 18),),
-                    Text(nama, style: TextStyle(fontSize: 13, color: Colors.grey),),
-                    Divider(color: Colors.grey, thickness: 0.75,),
+                    jarak,
+                    labelProfil("Nama Lengkap"),
+                    labelData(nama),
+                    pembatas,
 
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text("Tempat, Tanggal Lahir", style: TextStyle( fontWeight: FontWeight.bold, fontSize: 18),),
+                    jarak,
+                    labelProfil("Tempat, Tanggal Lahir"),
                     Text("$tempat_lahir, $tanggal_lahir", style: TextStyle(fontSize: 13, color: Colors.grey),),
                     Divider(color: Colors.grey, thickness: 0.75,),
 
-                    SizedBox(
-                      height: 10,
-                    ),
+                    jarak,
                     Text("Umur", style: TextStyle( fontWeight: FontWeight.bold, fontSize: 18),),
                     Text("$umur tahun", style: TextStyle(fontSize: 13, color: Colors.grey),),
                     Divider(color: Colors.grey, thickness: 0.75,),
 
-                    if(status_tampil) SizedBox(
-                      height: 10,
-                    ),
+                    if(status_tampil) jarak,
                     if(status_tampil) Text("Sekolah", style: TextStyle( fontWeight: FontWeight.bold, fontSize: 18),),
                     if(status_tampil) Text(sekolah, style: TextStyle(fontSize: 13, color: Colors.grey),),
                     if(status_tampil) Divider(color: Colors.grey, thickness: 0.75,),
 
-                    if(status_tampil) SizedBox(
-                      height: 10,
-                    ),
+                    if(status_tampil) jarak,
                     if(status_tampil) Text("Kelas", style: TextStyle( fontWeight: FontWeight.bold, fontSize: 18),),
                     if(status_tampil) Text(kelas, style: TextStyle(fontSize: 13, color: Colors.grey),),
                     if(status_tampil) Divider(color: Colors.grey, thickness: 0.75,),
 
-                    SizedBox(
-                      height: 10,
-                    ),
+                    jarak,
                     Text("Hobi", style: TextStyle( fontWeight: FontWeight.bold, fontSize: 18),),
                     Text(hobi, style: TextStyle(fontSize: 13, color: Colors.grey),),
                     Divider(color: Colors.grey, thickness: 0.75,),
 
-                    SizedBox(
-                      height: 20,
-                    ),
+                    jarakDinamis(20),
                     GestureDetector(
                       onTap: (){
                         setState((){

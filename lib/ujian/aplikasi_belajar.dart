@@ -5,9 +5,15 @@ import 'package:belajar/halaman_state.dart';
 import 'package:belajar/halaman_textfield.dart';
 import 'package:belajar/ujian/profil.dart';
 import 'package:flutter/material.dart';
+import 'package:belajar/data_statis.dart';
 
 class AplikasiBelajar extends StatefulWidget {
-  const AplikasiBelajar({Key? key}) : super(key: key);
+  const AplikasiBelajar({Key? key,
+    required this.welcomeTampungan,
+    required this.judulHalaman }) : super(key: key);
+
+  final String welcomeTampungan;
+  final String judulHalaman;
 
   @override
   State<AplikasiBelajar> createState() => _AplikasiBelajarState();
@@ -19,7 +25,7 @@ class _AplikasiBelajarState extends State<AplikasiBelajar> {
     return Scaffold(
       backgroundColor: Color(0xFFdcf9e2),
       appBar: AppBar(
-        title: Text("Aplikasi Belajar"),
+        title: Text(widget.judulHalaman),
       ),
       body: SafeArea(
         child: Center(
@@ -40,9 +46,7 @@ class _AplikasiBelajarState extends State<AplikasiBelajar> {
                     children: [
                       GestureDetector(
                         onTap: (){
-                          Navigator.push(context, MaterialPageRoute(
-                              builder: (context) => Profil()
-                          ));
+                          pindahHalaman(Profil(), context);
                         },
                         child: Row(
                           children: [
@@ -57,11 +61,12 @@ class _AplikasiBelajarState extends State<AplikasiBelajar> {
                                 child: Image.asset("assets/chair.jpg", fit: BoxFit.cover)
                             ),
                             Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("Ruby", style: TextStyle(
+                                Text(widget.welcomeTampungan + ", $nama", style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 17,
                                 ),),
-                                Text("XII A", style: TextStyle(
+                                Text(kelas, style: TextStyle(
                                   color: Colors.grey
                                 ),),
                               ],
@@ -97,13 +102,11 @@ class _AplikasiBelajarState extends State<AplikasiBelajar> {
                         children: [
                           GestureDetector(
                             onTap: (){
-                              Navigator.push(context, MaterialPageRoute(
-                                  builder: (context) => HalamanLayout()
-                              ));
+                              pindahHalaman(HalamanLayout(), context);
                             },
                             child: Container(
                               margin: EdgeInsets.all(12),
-                              child: Text("Layout", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                              child: Text("Layout", style: tulisanPutih),
                               decoration: BoxDecoration(
                                 color: Colors.pinkAccent,
                                 borderRadius: BorderRadius.circular(10)
@@ -114,13 +117,14 @@ class _AplikasiBelajarState extends State<AplikasiBelajar> {
 
                           GestureDetector(
                             onTap: (){
-                              Navigator.push(context, MaterialPageRoute(
-                                  builder: (context) => HalamanGambar()
-                              ));
+                              pindahHalaman(HalamanGambar(), context);
                             },
                             child: Container(
                               margin: EdgeInsets.all(12),
-                              child: Text("Gambar", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                              child: Text("Gambar", style: tulisanPutih.copyWith(
+                                fontStyle: FontStyle.italic,
+                                color: Colors.black
+                              )),
                               decoration: BoxDecoration(
                                 color: Colors.pinkAccent,
                                 borderRadius: BorderRadius.circular(10)
@@ -134,9 +138,7 @@ class _AplikasiBelajarState extends State<AplikasiBelajar> {
                         children: [
                           GestureDetector(
                             onTap: (){
-                              Navigator.push(context, MaterialPageRoute(
-                                  builder: (context) => HalamanState()
-                              ));
+                              pindahHalaman(HalamanState(), context);
                             },
                             child: Container(
                               margin: EdgeInsets.all(12),

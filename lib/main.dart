@@ -1,7 +1,9 @@
+import 'package:belajar/HalamanWebview.dart';
 import 'package:belajar/halaman_awal.dart';
 import 'package:belajar/halaman_dialog.dart';
 import 'package:belajar/halaman_gambar.dart';
 import 'package:belajar/halaman_layout.dart';
+import 'package:belajar/halaman_library.dart';
 import 'package:belajar/halaman_profil.dart';
 import 'package:belajar/halaman_state.dart';
 import 'package:belajar/halaman_textfield.dart';
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Login()
+      home: HalamanWebview()
     );
   }
 }

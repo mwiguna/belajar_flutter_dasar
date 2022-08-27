@@ -39,17 +39,16 @@ class _HalamanEditProfilState extends State<HalamanEditProfil> {
                 width: 400,
                 padding: EdgeInsets.only(top: 20, left: 15, bottom: 20, right: 15),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
 
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Edit Profil", textAlign: TextAlign.start, style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue
-                        ),),
-                      ],
+                    Container(
+                      width: 400,
+                      child: Text("Edit Profil", textAlign: TextAlign.start, style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue
+                      ),),
                     ),
 
                     SizedBox(height: 15,),
