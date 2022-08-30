@@ -87,6 +87,9 @@ flutter:
     - family: Nunito
       fonts:
         - asset: fonts/Nunito.ttf
+    - family: Helvetica Neue
+      fonts:
+       - asset: fonts/helveticaneue.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
