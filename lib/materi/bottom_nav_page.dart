@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 
 class PageOne extends StatefulWidget {
   const PageOne({Key? key}) : super(key: key);
@@ -194,6 +195,75 @@ class _PageThreeState extends State<PageThree> {
           ),
         ),
 
+      ],
+    );
+  }
+}
+
+class PageFour extends StatefulWidget {
+  const PageFour({Key? key}) : super(key: key);
+
+  @override
+  State<PageFour> createState() => _PageFourState();
+}
+
+class _PageFourState extends State<PageFour> {
+  late VideoPlayerController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.network(
+        'https://assets.mixkit.co/videos/preview/mixkit-sun-over-hills-1183-large.mp4')
+        ..initialize().then((_) {
+          print("SUDAH LOADING");
+          setState(() {});
+
+      _controller.addListener(() {
+        if(!_controller.value.isPlaying) setState(() {});
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        // Container(
+        //   height: 600,
+        //   width: double.infinity,
+        //   child: Center(
+        //     child: _controller.value.isInitialized ? AspectRatio(
+        //       aspectRatio: _controller.value.aspectRatio,
+        //       child: VideoPlayer(_controller),
+        //     ) : Container(),
+        //   ),
+        // ),
+
+        Container(
+          height: 670,
+          width: double.infinity,
+          child: Center(
+            child: _controller.value.isInitialized ? VideoPlayer(_controller) : Container(),
+          ),
+        ),
+
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 250),
+              child: ElevatedButton(
+                  onPressed: (){
+                    setState(() {
+                      _controller.value.isPlaying ? _controller.pause() : _controller.play();
+                    });
+                  },
+                  child:  Icon(_controller.value.isPlaying ? Icons.pause : Icons.play_arrow),
+              ),
+            ),
+          ],
+        )
       ],
     );
   }

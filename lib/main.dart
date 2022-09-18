@@ -11,6 +11,7 @@ import 'package:belajar/halaman_textfield.dart';
 import 'package:belajar/materi/bottom_nav.dart';
 import 'package:belajar/materi/materi_dialog.dart';
 import 'package:belajar/materi/materi_textfield.dart';
+import 'package:belajar/ujian2/ig_home.dart';
 import 'package:flutter/material.dart';
 import 'package:belajar/ujian/login.dart';
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HalamanNavigation()
+      home: IGHome()
     );
   }
 }

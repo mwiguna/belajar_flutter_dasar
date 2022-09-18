@@ -103,7 +103,9 @@ Container Aplikasi({
           ),
           child: Image.asset(gambar, fit: BoxFit.cover)
         ),
+
         SizedBox(height: 10),
+
         Text(nama, style: TextStyle(
             fontSize: 13
         )),

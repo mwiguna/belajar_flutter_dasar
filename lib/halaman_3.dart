@@ -11,6 +11,7 @@ class HalamanKetiga extends StatefulWidget {
 class _HalamanKetigaState extends State<HalamanKetiga> {
   @override
   Widget build(BuildContext context) {
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
@@ -36,6 +37,12 @@ class _HalamanKetigaState extends State<HalamanKetiga> {
           ),
 
           SizedBox(height: 10),
+
+          // Ujian : Design : 2
+          // 3 : Data manipulator : Sama ujian dart -> For didalam for, map didalam list, list dalam map, ada map, class data
+          // State management : Refresh sebagian == setstate : 8
+          // Database : 6
+          // Proyek : 20
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

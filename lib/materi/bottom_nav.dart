@@ -15,7 +15,7 @@ class _BottomNavPageState extends State<BottomNavPage> {
     PageOne(),
     PageTwo(),
     PageThree(),
-    Text("Hal 4"),
+    PageFour(),
   ];
 
   Widget menu(int index, IconData icon){
