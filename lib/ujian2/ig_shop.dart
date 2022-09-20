@@ -108,17 +108,18 @@ class _IGShopState extends State<IGShop> {
     );
   }
 
-  Widget labelShop(String label){
-    return Padding(
-      padding: const EdgeInsets.only(right: 5, left: 5),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-        decoration: BoxDecoration(
-            color: Colors.grey.shade300,
-            borderRadius: BorderRadius.circular(10)
-        ),
-        child: Text(label),
+}
+
+Widget labelShop(String label){
+  return Padding(
+    padding: const EdgeInsets.only(right: 5, left: 5),
+    child: Container(
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+      decoration: BoxDecoration(
+          color: Colors.grey.shade300,
+          borderRadius: BorderRadius.circular(10)
       ),
-    );
-  }
+      child: Text(label),
+    ),
+  );
 }

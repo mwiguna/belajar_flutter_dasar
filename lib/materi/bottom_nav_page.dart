@@ -9,6 +9,12 @@ class PageOne extends StatefulWidget {
 }
 
 class _PageOneState extends State<PageOne> {
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -47,7 +53,37 @@ class _PageOneState extends State<PageOne> {
 
           },
           child: Text("Show Bottom Sheet"),
-        )
+        ),
+
+        DefaultTabController(
+          initialIndex: 1,
+          length: 3,
+          child: Container(
+            height: 500,
+            child: Column(
+              children: [
+                TabBar(
+                  indicatorColor: Colors.black,
+                  tabs: [
+                    Tab(icon: Icon(Icons.cloud_outlined, color: Colors.black)),
+                    Tab(icon: Icon(Icons.beach_access_sharp, color: Colors.black)),
+                    Tab(icon: Icon(Icons.brightness_5_sharp, color: Colors.black)),
+                  ],
+                ),
+                Expanded(
+                  child: TabBarView(
+                    children: [
+                      Center(child: Text("It's cloudy here")),
+                      Center(child: Text("It's rainy here")),
+                      Center(child: Text("It's sunny here")),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+
       ],
     );
   }
