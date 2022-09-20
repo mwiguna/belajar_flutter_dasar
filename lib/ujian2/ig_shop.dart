@@ -32,7 +32,7 @@ class _IGShopState extends State<IGShop> {
                   SizedBox(
                     width: 7,
                   ),
-                  Icon(MdiIcons.menu, size: 30,)
+                  Icon(MdiIcons.menu, size: 30)
                 ],
               ),
             ],

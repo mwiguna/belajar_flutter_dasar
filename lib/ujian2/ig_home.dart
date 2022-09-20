@@ -1,3 +1,4 @@
+import 'package:belajar/ujian2/ig_akun.dart';
 import 'package:belajar/ujian2/ig_awal.dart';
 import 'package:belajar/ujian2/ig_search.dart';
 import 'package:belajar/ujian2/ig_shop.dart';
@@ -19,7 +20,7 @@ class _IGHomeState extends State<IGHome> {
     IGSearch(),
     Center(child: Text("Reels Skip")),
     IGShop(),
-    Text("Halaman 5"),
+    IGAkun(),
   ];
 
   int nomor_halaman = 0;

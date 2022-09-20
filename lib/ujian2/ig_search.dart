@@ -61,15 +61,14 @@ class _IGSearchState extends State<IGSearch> {
           ),
         ),
 
-        itemSearch("Fernanda", "Putra Fernanda"),
-        itemSearch("Fernanda", "Putra Fernanda"),
-        itemSearch("Fernanda", "Putra Fernanda"),
-        itemSearch("Fernanda", "Putra Fernanda"),
-        itemSearch("Fernanda", "Putra Fernanda"),
-        itemSearch("Fernanda", "Putra Fernanda"),
-        itemSearch("Fernanda", "Putra Fernanda"),
-        itemSearch("Fernanda", "Putra Fernanda"),
-        itemSearch("Fernanda", "Putra Fernanda"),
+        itemSearch("Fernanda 1", "Putra Fernanda 1"),
+        itemSearch("Fernanda 2", "Putra Fernanda 2"),
+        itemSearch("Fernanda 3", "Putra Fernanda 3"),
+        itemSearch("Fernanda 4", "Putra Fernanda 4"),
+        itemSearch("Fernanda 5", "Putra Fernanda 5"),
+        itemSearch("Fernanda 6", "Putra Fernanda 6"),
+        itemSearch("Fernanda 7", "Putra Fernanda 7"),
+        itemSearch("Fernanda 8", "Putra Fernanda 8"),
       ],
     );
   }
@@ -86,8 +85,7 @@ class _IGSearchState extends State<IGSearch> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(100)
             ),
-            child: Image.network(urlPanda,
-              fit: BoxFit.cover,),
+            child: Image.network(urlPanda, fit: BoxFit.cover),
           ),
           SizedBox(width: 10,),
           Container(
@@ -106,7 +104,7 @@ class _IGSearchState extends State<IGSearch> {
               ],
             ),
           ),
-          Icon(MdiIcons.close, color: Colors.grey, size: 17,),
+          Icon(MdiIcons.close, color: Colors.grey, size: 17),
         ],
       ),
     );
