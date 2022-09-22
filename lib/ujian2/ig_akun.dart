@@ -39,7 +39,6 @@ class _IGAkunState extends State<IGAkun> {
                         backgroundColor: Colors.transparent,
                         builder: (BuildContext context) {
                           return Container(
-                            height: 300,
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.only(topRight: Radius.circular(20), topLeft: Radius.circular(20))
@@ -88,7 +87,7 @@ class _IGAkunState extends State<IGAkun> {
               Container(
                 width: 70,
                 height: 70,
-                clipBehavior: Clip.antiAlias,
+                clipBehavior: Clip.antiAlias, // memaksa agar ikut lengkung
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100)
                 ),

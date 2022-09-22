@@ -69,6 +69,7 @@ class _IGSearchState extends State<IGSearch> {
         itemSearch("Fernanda 6", "Putra Fernanda 6"),
         itemSearch("Fernanda 7", "Putra Fernanda 7"),
         itemSearch("Fernanda 8", "Putra Fernanda 8"),
+
       ],
     );
   }

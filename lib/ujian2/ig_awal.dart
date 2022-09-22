@@ -1,3 +1,4 @@
+import 'package:belajar/ujian2/ig_data.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -9,9 +10,6 @@ class IGAwal extends StatefulWidget {
 }
 
 class _IGAwalState extends State<IGAwal> {
-  String urlPanda = "https://asset.kompas.com/crops/ncgvDkq11ovx_624dxbv483x_iY=/0x0:648x432/750x500/data/photo/2021/10/05/615c371c61b81.jpg";
-  List<String> nama = ["Nama", "Filtra", "Kinchi"];
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,9 +27,7 @@ class _IGAwalState extends State<IGAwal> {
               Row(
                 children: [
                   Icon(MdiIcons.plusBoxOutline, size: 30,),
-                  SizedBox(
-                    width: 7,
-                  ),
+                  SizedBox(width: 7),
                   Icon(MdiIcons.cardsHeartOutline, size: 30,),
                   SizedBox(
                     width: 7,
@@ -43,6 +39,10 @@ class _IGAwalState extends State<IGAwal> {
           ),
         ),
 
+        // 2015 : java, 2017, : kotlin, 2019 : flutter / react
+        // 2015 : php, 2017 : javascript (node js), 2021 (golang)
+        // Row, Column, Listview, Gridview,
+
         SizedBox(
           height: 5,
         ),
@@ -52,14 +52,11 @@ class _IGAwalState extends State<IGAwal> {
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              fotoKecil(urlPanda),
-              fotoKecil(urlPanda),
-              fotoKecil(urlPanda),
-              fotoKecil(urlPanda),
-              fotoKecil(urlPanda),
-              fotoKecil(urlPanda),
-              fotoKecil(urlPanda),
-              fotoKecil(urlPanda),
+              for(int i = 1; i <= 10; i++) fotoKecil(urlPanda),
+              // i awalnya 10
+              // kondisinya harus == 10
+              // saat cek pertama kali, apakah 10 = 10? tidak > ya > keluar satu kali
+              // apakah 11 = 10? tidak
             ],
           ),
         ),
@@ -119,8 +116,7 @@ Column itemFoto(String url, String nama){
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100)
                         ),
-                        child: Image.network(url,
-                          fit: BoxFit.cover,),
+                        child: Image.network(url, fit: BoxFit.cover,),
                       ),
                       SizedBox(height: 5,),
                     ],
