@@ -19,7 +19,7 @@ class _IGAwalState extends State<IGAwal> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Instagram", style: TextStyle(
+              Text(judulAplikasi, style: TextStyle(
                   fontSize: 29,
                   fontWeight: FontWeight.bold,
                   fontFamily: "IG"
@@ -29,19 +29,13 @@ class _IGAwalState extends State<IGAwal> {
                   Icon(MdiIcons.plusBoxOutline, size: 30,),
                   SizedBox(width: 7),
                   Icon(MdiIcons.cardsHeartOutline, size: 30,),
-                  SizedBox(
-                    width: 7,
-                  ),
+                  SizedBox(width: 7),
                   Icon(MdiIcons.chatProcessingOutline, size: 30,)
                 ],
               ),
             ],
           ),
         ),
-
-        // 2015 : java, 2017, : kotlin, 2019 : flutter / react
-        // 2015 : php, 2017 : javascript (node js), 2021 (golang)
-        // Row, Column, Listview, Gridview,
 
         SizedBox(
           height: 5,
@@ -52,11 +46,7 @@ class _IGAwalState extends State<IGAwal> {
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              for(int i = 1; i <= 10; i++) fotoKecil(urlPanda),
-              // i awalnya 10
-              // kondisinya harus == 10
-              // saat cek pertama kali, apakah 10 = 10? tidak > ya > keluar satu kali
-              // apakah 11 = 10? tidak
+              for(String nama in daftarNama) fotoKecil(nama, daftarUrlGambar[nama]!),
             ],
           ),
         ),
@@ -64,16 +54,23 @@ class _IGAwalState extends State<IGAwal> {
         Divider(height: 1, thickness: 1),
         SizedBox(height: 5),
 
-        itemFoto(urlPanda, nama[0]),
-        itemFoto(urlPanda, nama[1]),
-        itemFoto(urlPanda, nama[2]),
+        for(Map<String, String> item in daftarStatus) itemFoto(
+          daftarUrlGambar[item["nama"]]!,
+          item["foto"]!,
+          item["nama"]!,
+          item["status"]!
+        ),
+
+        // for(String nama in daftarNama) itemFoto(
+        //     daftarUrlGambar[nama]!, nama, "Status Statik"
+        // ),
 
       ],
     );
   }
 }
 
-Padding fotoKecil (String url){
+Padding fotoKecil (String nama, String url){
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 8),
     child: Column(
@@ -89,13 +86,13 @@ Padding fotoKecil (String url){
             fit: BoxFit.cover,),
         ),
         SizedBox(height: 5),
-        Text("Panda")
+        Text(nama)
       ],
     ),
   );
 }
 
-Column itemFoto(String url, String nama){
+Column itemFoto(String profil, String url, String nama, String status){
   return Column(
     children: [
       Padding(
@@ -116,7 +113,7 @@ Column itemFoto(String url, String nama){
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100)
                         ),
-                        child: Image.network(url, fit: BoxFit.cover,),
+                        child: Image.network(profil, fit: BoxFit.cover,),
                       ),
                       SizedBox(height: 5,),
                     ],
@@ -167,7 +164,7 @@ Column itemFoto(String url, String nama){
             Text(nama, style: TextStyle(
               fontWeight: FontWeight.bold,
             ),),
-            Text("Iceng adalah seekor kucing gepeng yang digeprek"),
+            Text(status),
             Row(
               children: [
                 Text("2 days ago", style: TextStyle(color: Colors.grey, fontSize: 12),),

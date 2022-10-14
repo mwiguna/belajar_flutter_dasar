@@ -9,14 +9,6 @@ int umur = 12;
 SizedBox jarak = SizedBox(height: 10);
 
 SizedBox jarakDinamis(double jarak_yang_diinginkan){
-
-  // Membuat Json String
-  String stringJsonIdentitas = jsonEncode({"nama":"budi","kelas":"X","hobi":"berenang"});
-
-  // Convert Json String to JSON
-  dynamic jsonIdentitas = jsonDecode(stringJsonIdentitas);
-
-  print(jsonIdentitas);
   return SizedBox(height: jarak_yang_diinginkan);
 }
 

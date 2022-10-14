@@ -1,5 +1,6 @@
 import 'package:belajar/ujian2/ig_akun.dart';
 import 'package:belajar/ujian2/ig_awal.dart';
+import 'package:belajar/ujian2/ig_reels.dart';
 import 'package:belajar/ujian2/ig_search.dart';
 import 'package:belajar/ujian2/ig_shop.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class _IGHomeState extends State<IGHome> {
   List<dynamic> daftar_widget = [
     IGAwal(),
     IGSearch(),
-    Center(child: Text("Reels Skip")),
+    IGReels(),
     IGShop(),
     IGAkun(),
   ];

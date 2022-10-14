@@ -39,6 +39,7 @@ dependencies:
   url_launcher: 6.0.9
   webview_flutter: ^2.8.0
   video_player: ^2.4.7
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
